@@ -1,26 +1,147 @@
 
-# 简化版四国军棋（6x6，一对一）AI 项目骨架（已按固定部署顺序改造）
+# 简化版军棋 AI （6X6棋盘，一对一）项目
 
-主要更新：
-- 修复脚本导入路径（sys.path 注入）。
-- 渲染使用中文字体（优先 WenQuanYi / WQY Micro Hei），文本尺寸改为 textbbox，ASCII 标注使用真实棋子 owner。
-- 部署策略改为“固定顺序给定棋子，仅预测落点”，并在网络输入中加入 `is_deploy` 通道（总通道=13）。
+## 项目目的与简介
 
-## 依赖
+本项目的目标是：**在简化后的军棋规则下，快速搭建一个可运行的 AI 对弈与训练平台**。
+原版四国军棋规则复杂、棋子多，直接构建 AI 成本较高。本项目通过缩小棋盘与棋子数量，去除部分复杂规则（但保留不完全信息的特点），在一个更小的实验环境下验证项目的可行性。这样不仅能快速跑通监督学习与强化学习流程，还能在较低算力环境下进行效果迭代。
+
+项目结构：
+
+* **核心逻辑**：棋盘、棋子、对局规则（部署、走子、判胜负等）
+* **AI 模块**：极简 UNet 网络（PyTorch 实现），支持部署阶段与对局阶段的策略预测
+* **对局脚本**：支持 AI vs AI、AI vs Human、AI vs 输入代理三种模式，均可实时和复盘
+* **可视化**：终端字符版棋盘 + PNG 图像渲染（支持双方视角/全局视角）。由于主要在服务器上调试，暂无可交互UI。
+* **复盘系统**：完整保存对局过程（json），可用于监督学习或复盘渲染
+* **训练接口**：提供简易的监督学习与强化学习示例流程，能保存和加载模型权重
+
+目前已实现的功能包括：
+
+* 简化规则下的完整对局循环（部署→走子→结束判定）
+* AI 部署和走子策略（部署顺序固定，落点由网络决定）
+* 实时对弈渲染、复盘渲染
+* 复盘日志格式（JSON），可用于训练数据
+* 基础监督学习与强化学习训练流程（尚未测试）
+
+---
+
+## 规则简介
+
+为降低复杂度，本项目对军棋做了如下简化：
+
+1. **棋盘**
+
+   * 使用 **6×6 棋盘**（总共 36 个格子）
+   * 双方各占据靠近己方的两行作为部署区（共 12 个棋子），中间 2 行为空
+
+2. **棋子种类**
+   每方共 12 枚棋子，具体为：
+
+   * 军旗 1（必须放在最后一行的指定列，若被对方触碰则立即失败）
+   * 司令 1（最大）
+   * 军长 1
+   * 师长 2
+   * 旅长 2
+   * 团长 2
+   * 营长 2
+   * 炸弹 1（与任何子相遇同归于尽）
+
+   **子力大小**：司令 > 军长 > 师长 > 旅长 > 团长 > 营长 > 炸弹 > 军旗
+
+3. **行棋规则**
+
+   * 每回合一方只能选择一个己方棋子，向上下左右 **相邻一格**移动
+   * 目标格为空则直接移动；若有敌方棋子则触发战斗：
+
+     * 子力高者胜，低者被吃掉
+     * 相等则同归于尽
+     * 炸弹遇敌同归于尽
+   * 军旗不可移动
+
+4. **和棋规则**
+   若连续若干步（默认 40 步）没有发生任何战斗，则判定为平局。
+
+---
+
+## 使用说明
+
+### 安装依赖
+
 ```bash
 pip install -r requirements.txt
 ```
 
-## 运行
+### 运行对局
+
+1. **AI vs AI**
+
+   ```bash
+   python scripts/ai_vs_ai.py --step
+   ```
+
+   支持实时输出和保存复盘文件。
+
+2. **AI vs Human**
+
+   ```bash
+   python scripts/ai_vs_human.py --human_side RED
+   ```
+
+   人类通过命令行输入棋子和坐标，AI 自动走子。
+
+3. **AI vs Input**
+
+   ```bash
+   python scripts/ai_vs_input.py --ai_side RED
+   ```
+
+   适用于 AI 与外部真人对弈的中介模式，由用户输入对方的动作结果。
+
+4. **复盘渲染**
+
+   ```bash
+   python scripts/render_replay.py --replay replays/ai_vs_ai.json --step
+   ```
+
+   可逐步回放并渲染 PNG 图片。
+
+### 可视化
+
+* 所有对局都会在终端输出 ASCII 棋盘
+* 同时在 `renders/` 文件夹下生成 PNG 图片（反复覆盖）
+
+  * `*_all.png` 全局视角
+  * `*_red.png` 红方视角
+  * `*_blue.png` 蓝方视角
+
+---
+
+## 训练说明（尚未测试）
+
+### 监督学习
+
+使用对局复盘文件（JSON 格式）作为训练数据：
+
 ```bash
-python scripts/ai_vs_ai.py --step
-python scripts/ai_vs_human.py --human_side RED
-python scripts/ai_vs_input.py --ai_side RED
-python scripts/render_replay.py --replay replays/ai_vs_ai.json --step
+python -m minijunqi.ai.train_supervised --replays replays/*.json --epochs 5 --out checkpoints/sup.pt
 ```
 
-## 训练
+### 强化学习
+
+通过自我博弈方式进行简易训练：
+
 ```bash
-python -m minijunqi.ai.train_supervised --replays replays/*.json --epochs 1 --out checkpoints/sup.pt
-python -m minijunqi.ai.train_rl --episodes 10 --out checkpoints/rl.pt
+python -m minijunqi.ai.train_rl --episodes 100 --out checkpoints/rl.pt
 ```
+
+### 模型使用
+
+训练得到的权重可在对局脚本中加载：
+
+```bash
+python scripts/ai_vs_ai.py --ckpt_red checkpoints/sup.pt --ckpt_blue checkpoints/rl.pt
+```
+
+---
+
+要不要我直接把这份 README.md 文件帮你生成好（替换项目里现有的 README）？
