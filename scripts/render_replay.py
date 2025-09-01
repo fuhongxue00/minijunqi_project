@@ -12,7 +12,7 @@ def main():
     ap.add_argument('--replay', type=str, required=True)
     ap.add_argument('--renders', type=str, default='renders')
     ap.add_argument('--step', action='store_true')
-    ap.add_argument('--sleep', type=float, default=0.0)
+    ap.add_argument('--sleep', type=float, default=0.2)
     args = ap.parse_args()
     os.makedirs(args.renders, exist_ok=True)
     with open(args.replay, 'r', encoding='utf-8') as f:
@@ -43,7 +43,7 @@ def main():
             else:
                 b.set(src,None); b.set(dst,None)
         print(ascii_board(b, Player.RED, reveal_all=True))
-        save_triple_latest(b, out_dir=args.renders, stem=f'replay_step_{t}')
+        save_triple_latest(b, out_dir=args.renders, stem=f'replay_step_latest')
         t+=1
     print('复盘结束。')
 if __name__ == '__main__': main()

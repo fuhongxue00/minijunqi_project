@@ -66,7 +66,7 @@ class Game:
             if not self.state.board.has_legal_move(opponent):
                 self.state.winner = player
                 self.state.end_reason = 'no_moves_opponent'
-            elif: not self.state.board.has_legal_move(player):
+            elif not self.state.board.has_legal_move(player):
                 self.state.winner = opponent
                 self.state.end_reason = 'no_moves_self'
         

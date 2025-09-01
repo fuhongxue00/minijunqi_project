@@ -19,6 +19,10 @@ def main():
     ap.add_argument('--ckpt', type=str, default=None)
     ap.add_argument('--renders', type=str, default='renders')
     ap.add_argument('--replay_out', type=str, default='replays/ai_vs_human.json')
+    ap.add_argument('--human-random-deploy',
+                    action=argparse.BooleanOptionalAction,
+                    default=True,
+                    help='人类玩家使用随机布局（默认开启）。如需手动布局，使用 --no-human-random-deploy')
     args = ap.parse_args()
     os.makedirs(args.renders, exist_ok=True)
     os.makedirs(os.path.dirname(args.replay_out) or '.', exist_ok=True)
@@ -31,7 +35,20 @@ def main():
     logger = ReplayLogger(); logger.set_players('HUMAN', 'AI')
     while game.state.phase == 'deploy':
         cur = game.state.turn
-        if cur == human:
+        if cur == human and args.human_random_deploy:
+            # 连续自动下子直到轮到 AI 或进入行棋阶段
+            did_any = False
+            while game.state.phase == 'deploy' and game.state.turn == human:
+                pid, rc = agent.select_deploy(game, human)
+                ok = game.deploy(human, pid, rc)
+                if ok:
+                    logger.log_deploy(human, pid, rc)
+                    did_any = True
+                else:
+                    break
+            if did_any:
+                print('（已为人类玩家完成随机布局）')
+        elif cur == human:
             print('你的回合-部署。输入: PIECE_NAME r,c  例如: COMMANDER 5,1')
             print('可用棋子：', {k.name:v for k,v in game.state.pools[cur].items() if v>0})
             s = input('> ').strip(); 

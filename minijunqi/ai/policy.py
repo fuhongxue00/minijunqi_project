@@ -14,7 +14,7 @@ DIRS = [(-1,0),(1,0),(0,-1),(0,1)]
 def encode_obs(board: Board, viewer: Player, side_to_move: Player, no_battle_counter: int, no_battle_limit: int, reveal_all: bool=False, is_deploy: bool=False) -> torch.Tensor:
     """返回 (C,H,W) 张量。通道：10个ID、side_to_move、no_battle_ratio、is_deploy。"""
     from ..constants import PieceID
-    obs = board.observe(viewer, reveal_all=reveal_all, is_deploy=is_deploy)
+    obs = board.observe(viewer, reveal_all=reveal_all, hide_enemy_positions=is_deploy and not reveal_all)
     H, W = BOARD_H, BOARD_W
     C = 13
     x = np.zeros((C, H, W), dtype=np.float32)

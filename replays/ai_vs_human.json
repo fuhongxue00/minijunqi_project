@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "board_size": [
+    6,
+    6
+  ],
+  "piece_mapping": {
+    "0": "EMPTY",
+    "1": "FLAG",
+    "2": "COMMANDER",
+    "3": "ARMY",
+    "4": "DIVISION",
+    "5": "BRIGADE",
+    "6": "REGIMENT",
+    "7": "BATTALION",
+    "8": "BOMB",
+    "9": "UNKNOWN_ENEMY"
+  },
+  "players": {
+    "RED": {
+      "id": "HUMAN"
+    },
+    "BLUE": {
+      "id": "AI"
+    }
+  },
+  "initial_deployments": {
+    "RED": [
+      {
+        "piece": "FLAG",
+        "pos": [
+          5,
+          4
+        ]
+      },
+      {
+        "piece": "COMMANDER",
+        "pos": [
+          4,
+          0
+        ]
+      },
+      {
+        "piece": "ARMY",
+        "pos": [
+          5,
+          5
+        ]
+      },
+      {
+        "piece": "DIVISION",
+        "pos": [
+          5,
+          1
+        ]
+      },
+      {
+        "piece": "DIVISION",
+        "pos": [
+          5,
+          0
+        ]
+      },
+      {
+        "piece": "BRIGADE",
+        "pos": [
+          5,
+          3
+        ]
+      },
+      {
+        "piece": "BRIGADE",
+        "pos": [
+          4,
+          2
+        ]
+      },
+      {
+        "piece": "REGIMENT",
+        "pos": [
+          4,
+          1
+        ]
+      },
+      {
+        "piece": "REGIMENT",
+        "pos": [
+          5,
+          2
+        ]
+      },
+      {
+        "piece": "BATTALION",
+        "pos": [
+          4,
+          4
+        ]
+      },
+      {
+        "piece": "BATTALION",
+        "pos": [
+          4,
+          3
+        ]
+      },
+      {
+        "piece": "BOMB",
+        "pos": [
+          4,
+          5
+        ]
+      }
+    ],
+    "BLUE": [
+      {
+        "piece": "FLAG",
+        "pos": [
+          0,
+          1
+        ]
+      },
+      {
+        "piece": "COMMANDER",
+        "pos": [
+          1,
+          4
+        ]
+      },
+      {
+        "piece": "ARMY",
+        "pos": [
+          1,
+          3
+        ]
+      },
+      {
+        "piece": "DIVISION",
+        "pos": [
+          0,
+          2
+        ]
+      },
+      {
+        "piece": "DIVISION",
+        "pos": [
+          1,
+          1
+        ]
+      },
+      {
+        "piece": "BRIGADE",
+        "pos": [
+          0,
+          0
+        ]
+      },
+      {
+        "piece": "BRIGADE",
+        "pos": [
+          1,
+          5
+        ]
+      },
+      {
+        "piece": "REGIMENT",
+        "pos": [
+          0,
+          4
+        ]
+      },
+      {
+        "piece": "REGIMENT",
+        "pos": [
+          1,
+          0
+        ]
+      },
+      {
+        "piece": "BATTALION",
+        "pos": [
+          0,
+          5
+        ]
+      },
+      {
+        "piece": "BATTALION",
+        "pos": [
+          1,
+          2
+        ]
+      },
+      {
+        "piece": "BOMB",
+        "pos": [
+          0,
+          3
+        ]
+      }
+    ]
+  },
+  "moves": [
+    {
+      "turn": 0,
+      "player": "RED",
+      "from": [
+        4,
+        0
+      ],
+      "to": [
+        3,
+        0
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756717278.107305
+    },
+    {
+      "turn": 1,
+      "player": "BLUE",
+      "from": [
+        1,
+        0
+      ],
+      "to": [
+        2,
+        0
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756717278.1863942
+    },
+    {
+      "turn": 2,
+      "player": "RED",
+      "from": [
+        3,
+        0
+      ],
+      "to": [
+        2,
+        0
+      ],
+      "event": {
+        "ok": true,
+        "type": "capture",
+        "result": "attacker",
+        "flag_captured": false
+      },
+      "ts": 1756717285.6742623
+    },
+    {
+      "turn": 3,
+      "player": "BLUE",
+      "from": [
+        1,
+        4
+      ],
+      "to": [
+        2,
+        4
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756717285.765697
+    },
+    {
+      "turn": 4,
+      "player": "RED",
+      "from": [
+        2,
+        0
+      ],
+      "to": [
+        1,
+        0
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756717303.439462
+    },
+    {
+      "turn": 5,
+      "player": "BLUE",
+      "from": [
+        2,
+        4
+      ],
+      "to": [
+        1,
+        4
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756717303.5244377
+    },
+    {
+      "turn": 6,
+      "player": "RED",
+      "from": [
+        1,
+        0
+      ],
+      "to": [
+        0,
+        0
+      ],
+      "event": {
+        "ok": true,
+        "type": "capture",
+        "result": "attacker",
+        "flag_captured": false
+      },
+      "ts": 1756717311.3679554
+    },
+    {
+      "turn": 7,
+      "player": "BLUE",
+      "from": [
+        1,
+        4
+      ],
+      "to": [
+        2,
+        4
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756717311.443548
+    },
+    {
+      "turn": 8,
+      "player": "RED",
+      "from": [
+        0,
+        0
+      ],
+      "to": [
+        0,
+        1
+      ],
+      "event": {
+        "ok": true,
+        "type": "capture",
+        "result": "attacker",
+        "flag_captured": true
+      },
+      "ts": 1756717317.322538
+    }
+  ],
+  "outcome": {
+    "winner": "RED",
+    "reason": "flag_captured"
+  },
+  "meta": {
+    "created": "2025-09-01T09:01:07.572094Z"
+  }
+}
