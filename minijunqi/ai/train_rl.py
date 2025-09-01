@@ -59,7 +59,7 @@ def play_episode(net: TinyUNet):
         traj.append((logp, player))
         ev=g.step(src,dst)
     if g.state.end_reason=='flag_captured':
-        r=1.0 if g.state.winner==Player.RED else -1.0
+        r=2.0 if g.state.winner==Player.RED else -1.0
     else:
         r=0.0
     returns=[]

@@ -14,7 +14,7 @@ def main():
     ap.add_argument('--ckpt_red', type=str, default=None)
     ap.add_argument('--ckpt_blue', type=str, default=None)
     ap.add_argument('--step', action='store_true')
-    ap.add_argument('--sleep', type=float, default=0.0)
+    ap.add_argument('--sleep', type=float, default=0.1)
     ap.add_argument('--replay_out', type=str, default='replays/ai_vs_ai.json')
     ap.add_argument('--renders', type=str, default='renders')
     args = ap.parse_args()
