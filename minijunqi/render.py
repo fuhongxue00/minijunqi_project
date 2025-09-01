@@ -31,8 +31,8 @@ PIECE_SHORT = {
     PieceID.UNKNOWN_ENEMY: '?'
 }
 
-def ascii_board(board: Board, viewer: Player, reveal_all: bool=False) -> str:
-    obs = board.observe(viewer, reveal_all=reveal_all)
+def ascii_board(board: Board, viewer: Player, reveal_all: bool=False, is_deploy: bool=False) -> str:
+    obs = board.observe(viewer, reveal_all=reveal_all,hide_enemy_positions=is_deploy and not reveal_all)
     rows = []
     for r in range(BOARD_H):
         row = []
@@ -50,7 +50,7 @@ def ascii_board(board: Board, viewer: Player, reveal_all: bool=False) -> str:
     header = f"视角: {viewer.name}  (reveal_all={reveal_all})"
     return header + "\n" + '\n'.join(rows)
 
-def save_image(board: Board, path: str, viewer: Player, reveal_all: bool=False, title: Optional[str]=None):
+def save_image(board: Board, path: str, viewer: Player, reveal_all: bool=False, title: Optional[str]=None, is_deploy: bool=False):
     cell = 64
     pad = 20
     w = BOARD_W*cell + pad*2
@@ -65,7 +65,7 @@ def save_image(board: Board, path: str, viewer: Player, reveal_all: bool=False, 
         x = pad + j*cell
         draw.line((x, pad, x, pad+BOARD_H*cell), fill=(0,0,0), width=2)
     # Pieces
-    obs = board.observe(viewer, reveal_all=reveal_all)
+    obs = board.observe(viewer, reveal_all=reveal_all,hide_enemy_positions=is_deploy and not reveal_all)
     for r in range(BOARD_H):
         for c in range(BOARD_W):
             v = PieceID(obs[r][c])
@@ -93,10 +93,10 @@ def save_image(board: Board, path: str, viewer: Player, reveal_all: bool=False, 
     img.save(path)
     return path
 
-def save_triple_latest(board: Board, out_dir: str = '.', stem: str = 'board_latest'):
+def save_triple_latest(board: Board, out_dir: str = '.', stem: str = 'board_latest', is_deploy: bool=False):
     os.makedirs(out_dir, exist_ok=True)
     paths = {}
-    paths['all'] = save_image(board, os.path.join(out_dir, f"{stem}_all.png"), viewer=Player.RED, reveal_all=True, title='All Info')
-    paths['red'] = save_image(board, os.path.join(out_dir, f"{stem}_red.png"), viewer=Player.RED, reveal_all=False, title='RED View')
-    paths['blue'] = save_image(board, os.path.join(out_dir, f"{stem}_blue.png"), viewer=Player.BLUE, reveal_all=False, title='BLUE View')
+    paths['all'] = save_image(board, os.path.join(out_dir, f"{stem}_all.png"), viewer=Player.RED, reveal_all=True, is_deploy=is_deploy,title='All Info')
+    paths['red'] = save_image(board, os.path.join(out_dir, f"{stem}_red.png"), viewer=Player.RED, reveal_all=False, is_deploy=is_deploy,title='RED View')
+    paths['blue'] = save_image(board, os.path.join(out_dir, f"{stem}_blue.png"), viewer=Player.BLUE, reveal_all=False, is_deploy=is_deploy,title='BLUE View')
     return paths

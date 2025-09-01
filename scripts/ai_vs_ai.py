@@ -35,6 +35,11 @@ def main():
         ok = game.deploy(cur, piece, rc)
         if ok: logger.log_deploy(cur, piece, rc)
         cur = game.state.turn
+
+        # 在部署阶段也加上可视化
+        time.sleep(args.sleep)
+        print(ascii_board(game.state.board, viewer=Player.RED, reveal_all=True,is_deploy=True))
+        save_triple_latest(game.state.board, out_dir=args.renders, stem='board_latest',is_deploy=True)
     print('部署完毕，开始对局。')
     turn_idx=0
     while not game.is_over():

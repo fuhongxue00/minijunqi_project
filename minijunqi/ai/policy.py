@@ -14,7 +14,7 @@ DIRS = [(-1,0),(1,0),(0,-1),(0,1)]
 def encode_obs(board: Board, viewer: Player, side_to_move: Player, no_battle_counter: int, no_battle_limit: int, reveal_all: bool=False, is_deploy: bool=False) -> torch.Tensor:
     """返回 (C,H,W) 张量。通道：10个ID、side_to_move、no_battle_ratio、is_deploy。"""
     from ..constants import PieceID
-    obs = board.observe(viewer, reveal_all=reveal_all)
+    obs = board.observe(viewer, reveal_all=reveal_all, is_deploy=is_deploy)
     H, W = BOARD_H, BOARD_W
     C = 13
     x = np.zeros((C, H, W), dtype=np.float32)
@@ -54,6 +54,7 @@ class SharedPolicy:
         lc = out['deploy_cell_logits'].squeeze(0) / max(1e-6, temperature)
         pc = masked_softmax(lc, cell_mask, dim=0).cpu().numpy()
         if pc.sum() <= 0:
+            print('policy.py出现softmax后的负值')
             for idx in range(BOARD_H*BOARD_W):
                 if cell_mask[idx] > 0:
                     return divmod(idx, BOARD_W)

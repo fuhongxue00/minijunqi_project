@@ -53,6 +53,8 @@ class Game:
     def step(self, src: Coord, dst: Coord) -> Dict:
         assert self.state.phase=='play','not in play phase'
         player=self.state.turn
+        opponent = Player.RED if player == Player.BLUE else Player.BLUE
+        
         ev=self.state.board.move(player, src, dst)
         if not ev.get('ok'): return ev
         if ev['type']=='move': self.state.no_battle_counter+=1
@@ -60,6 +62,14 @@ class Game:
             self.state.no_battle_counter=0
             if ev.get('flag_captured'):
                 self.state.winner=player; self.state.end_reason='flag_captured'
+        if self.state.winner is None and hasattr(self.state.board, 'has_legal_move'):
+            if not self.state.board.has_legal_move(opponent):
+                self.state.winner = player
+                self.state.end_reason = 'no_moves_opponent'
+            elif: not self.state.board.has_legal_move(player):
+                self.state.winner = opponent
+                self.state.end_reason = 'no_moves_self'
+        
         if self.state.winner is None and self.state.no_battle_counter>=self.cfg.no_battle_draw_steps:
             self.state.end_reason='draw'
         if self.state.winner is None and self.state.end_reason is None:

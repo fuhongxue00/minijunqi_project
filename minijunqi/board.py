@@ -75,12 +75,35 @@ class Board:
         else:
             self.set(src,None); self.set(dst,None)
             return {'ok':True,'type':'capture','result':'both','flag_captured':flag_captured}
-    def observe(self, viewer: Player, reveal_all: bool=False):
+    def observe(
+        self,
+        viewer: Player,
+        reveal_all: bool=False,
+        hide_enemy_positions: bool=False,   # 新增：部署阶段时把敌方当作空
+    ):
         obs=[[0 for _ in range(BOARD_W)] for _ in range(BOARD_H)]
         for r in range(BOARD_H):
             for c in range(BOARD_W):
                 p=self.grid[r][c]
-                if p is None: obs[r][c]=int(PieceID.EMPTY)
-                elif reveal_all or p.owner==viewer: obs[r][c]=int(p.pid)
-                else: obs[r][c]=int(PieceID.UNKNOWN_ENEMY)
+                if p is None:
+                    obs[r][c] = int(PieceID.EMPTY)
+                elif reveal_all or p.owner == viewer:
+                    obs[r][c] = int(p.pid)
+                else:
+                    obs[r][c] = int(PieceID.EMPTY if hide_enemy_positions else PieceID.UNKNOWN_ENEMY)
         return obs
+
+    def has_legal_move(self, player: Player) -> bool:
+        """
+        判断该玩家是否有至少一个合法走子（相邻一步，不能走到己方子所在格，且棋子本身可移动）。
+        返回 True 表示至少存在一个合法走子；否则返回 False。
+        """
+        for r, c in self.iter_coords():
+            p = self.get((r, c))
+            if p is None or p.owner != player or not p.can_move():
+                continue
+            src = (r, c)
+            for dst in self.neighbors(src):
+                if self.can_move_from_to(player, src, dst):
+                    return True
+        return False
