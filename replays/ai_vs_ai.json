@@ -30,76 +30,76 @@
         "piece": "FLAG",
         "pos": [
           5,
-          1
+          4
         ]
       },
       {
         "piece": "COMMANDER",
         "pos": [
           4,
-          4
+          5
         ]
       },
       {
         "piece": "ARMY",
         "pos": [
-          4,
-          5
-        ]
-      },
-      {
-        "piece": "DIVISION",
-        "pos": [
           5,
-          4
-        ]
-      },
-      {
-        "piece": "DIVISION",
-        "pos": [
-          4,
           1
         ]
       },
       {
-        "piece": "BRIGADE",
-        "pos": [
-          4,
-          2
-        ]
-      },
-      {
-        "piece": "BRIGADE",
+        "piece": "DIVISION",
         "pos": [
           5,
+          0
+        ]
+      },
+      {
+        "piece": "DIVISION",
+        "pos": [
+          4,
           2
         ]
       },
       {
-        "piece": "REGIMENT",
+        "piece": "BRIGADE",
         "pos": [
           4,
-          3
+          4
         ]
       },
       {
-        "piece": "REGIMENT",
+        "piece": "BRIGADE",
         "pos": [
           4,
           0
         ]
       },
       {
-        "piece": "BATTALION",
+        "piece": "REGIMENT",
         "pos": [
           5,
-          5
+          3
+        ]
+      },
+      {
+        "piece": "REGIMENT",
+        "pos": [
+          5,
+          2
         ]
       },
       {
         "piece": "BATTALION",
         "pos": [
-          5,
+          4,
+          1
+        ]
+      },
+      {
+        "piece": "BATTALION",
+        "pos": [
+          4,
           3
         ]
       },
@@ -107,7 +107,7 @@
         "piece": "BOMB",
         "pos": [
           5,
-          0
+          5
         ]
       }
     ],
@@ -122,8 +122,8 @@
       {
         "piece": "COMMANDER",
         "pos": [
-          1,
-          5
+          0,
+          3
         ]
       },
       {
@@ -137,28 +137,28 @@
         "piece": "DIVISION",
         "pos": [
           0,
-          2
+          4
         ]
       },
       {
         "piece": "DIVISION",
         "pos": [
-          0,
-          0
+          1,
+          1
         ]
       },
       {
         "piece": "BRIGADE",
         "pos": [
           1,
-          3
+          5
         ]
       },
       {
         "piece": "BRIGADE",
         "pos": [
           0,
-          3
+          2
         ]
       },
       {
@@ -171,15 +171,15 @@
       {
         "piece": "REGIMENT",
         "pos": [
-          1,
-          1
+          0,
+          0
         ]
       },
       {
         "piece": "BATTALION",
         "pos": [
-          0,
-          4
+          1,
+          3
         ]
       },
       {
@@ -204,190 +204,191 @@
       "player": "RED",
       "from": [
         4,
-        2
+        4
       ],
       "to": [
         3,
-        2
+        4
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656177.7144349
+      "ts": 1756739512.973499
     },
     {
       "turn": 1,
       "player": "BLUE",
       "from": [
         1,
-        3
+        0
       ],
       "to": [
         2,
-        3
+        0
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656178.2997048
+      "ts": 1756739513.600367
     },
     {
       "turn": 2,
       "player": "RED",
       "from": [
-        5,
-        2
+        4,
+        0
       ],
       "to": [
-        4,
-        2
+        3,
+        0
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656178.8880098
+      "ts": 1756739514.2155726
     },
     {
       "turn": 3,
       "player": "BLUE",
       "from": [
         1,
-        2
+        5
       ],
       "to": [
         2,
-        2
+        5
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656179.484931
+      "ts": 1756739514.827011
     },
     {
       "turn": 4,
       "player": "RED",
       "from": [
-        5,
-        3
+        3,
+        4
       ],
       "to": [
-        5,
-        2
+        4,
+        4
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656180.086523
+      "ts": 1756739515.4413736
     },
     {
       "turn": 5,
       "player": "BLUE",
       "from": [
-        1,
-        1
+        2,
+        5
       ],
       "to": [
-        1,
-        2
+        3,
+        5
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656180.6869295
+      "ts": 1756739516.056501
     },
     {
       "turn": 6,
       "player": "RED",
       "from": [
-        5,
-        2
+        4,
+        5
       ],
       "to": [
-        5,
-        3
+        3,
+        5
       ],
       "event": {
         "ok": true,
-        "type": "move",
+        "type": "capture",
+        "result": "attacker",
         "flag_captured": false
       },
-      "ts": 1756656181.297109
+      "ts": 1756739516.6731339
     },
     {
       "turn": 7,
       "player": "BLUE",
       "from": [
-        2,
-        3
+        0,
+        0
       ],
       "to": [
-        3,
-        3
+        1,
+        0
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656181.911493
+      "ts": 1756739517.2894814
     },
     {
       "turn": 8,
       "player": "RED",
       "from": [
-        5,
-        3
+        4,
+        1
       ],
       "to": [
-        5,
-        2
+        4,
+        0
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656182.528342
+      "ts": 1756739517.8914227
     },
     {
       "turn": 9,
       "player": "BLUE",
       "from": [
         1,
-        2
+        4
       ],
       "to": [
         1,
-        1
+        5
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656183.1428456
+      "ts": 1756739518.4976156
     },
     {
       "turn": 10,
       "player": "RED",
       "from": [
-        5,
-        2
+        4,
+        3
       ],
       "to": [
-        5,
+        3,
         3
       ],
       "event": {
@@ -395,71 +396,53 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656183.7582126
+      "ts": 1756739519.1173723
     },
     {
       "turn": 11,
       "player": "BLUE",
       "from": [
-        0,
-        2
+        1,
+        3
       ],
       "to": [
-        1,
-        2
+        2,
+        3
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656184.3726141
+      "ts": 1756739519.735069
     },
     {
       "turn": 12,
       "player": "RED",
       "from": [
         5,
-        3
+        5
       ],
       "to": [
-        5,
-        2
+        4,
+        5
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656184.9891958
+      "ts": 1756739520.3591204
     },
     {
       "turn": 13,
       "player": "BLUE",
       "from": [
+        0,
+        3
+      ],
+      "to": [
         1,
-        5
-      ],
-      "to": [
-        2,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656185.6002078
-    },
-    {
-      "turn": 14,
-      "player": "RED",
-      "from": [
-        5,
-        2
-      ],
-      "to": [
-        5,
         3
       ],
       "event": {
@@ -467,26 +450,43 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656186.202731
+      "ts": 1756739520.9765353
+    },
+    {
+      "turn": 14,
+      "player": "RED",
+      "from": [
+        3,
+        5
+      ],
+      "to": [
+        3,
+        4
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739521.5921638
     },
     {
       "turn": 15,
       "player": "BLUE",
       "from": [
-        2,
-        2
+        1,
+        3
       ],
       "to": [
-        3,
-        2
+        1,
+        4
       ],
       "event": {
         "ok": true,
-        "type": "capture",
-        "result": "both",
+        "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656186.8159323
+      "ts": 1756739522.2083492
     },
     {
       "turn": 16,
@@ -496,33 +496,33 @@
         3
       ],
       "to": [
-        5,
-        2
+        4,
+        3
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656187.4244702
+      "ts": 1756739522.826002
     },
     {
       "turn": 17,
       "player": "BLUE",
       "from": [
         1,
-        2
+        4
       ],
       "to": [
-        0,
-        2
+        2,
+        4
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656188.0327969
+      "ts": 1756739523.441902
     },
     {
       "turn": 18,
@@ -540,89 +540,90 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656188.6439664
+      "ts": 1756739524.0526762
     },
     {
       "turn": 19,
       "player": "BLUE",
       "from": [
-        0,
-        3
+        1,
+        0
       ],
       "to": [
-        1,
-        3
+        0,
+        0
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656189.244221
+      "ts": 1756739524.6640344
     },
     {
       "turn": 20,
       "player": "RED",
       "from": [
-        5,
-        3
+        4,
+        5
       ],
       "to": [
         5,
-        2
+        5
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656189.8534439
+      "ts": 1756739525.2773297
     },
     {
       "turn": 21,
       "player": "BLUE",
       "from": [
-        2,
-        5
+        0,
+        0
       ],
       "to": [
-        2,
-        4
+        1,
+        0
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656190.4624417
+      "ts": 1756739525.8913538
     },
     {
       "turn": 22,
       "player": "RED",
       "from": [
-        5,
-        2
+        3,
+        0
       ],
       "to": [
-        5,
-        3
+        2,
+        0
       ],
       "event": {
         "ok": true,
-        "type": "move",
+        "type": "capture",
+        "result": "defender",
         "flag_captured": false
       },
-      "ts": 1756656191.0791776
+      "ts": 1756739526.5055668
     },
     {
       "turn": 23,
       "player": "BLUE",
       "from": [
         1,
-        4
+        5
       ],
       "to": [
-        1,
+        2,
         5
       ],
       "event": {
@@ -630,7 +631,7 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656191.6931467
+      "ts": 1756739527.1140215
     },
     {
       "turn": 24,
@@ -648,32 +649,32 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656192.307894
+      "ts": 1756739527.7253168
     },
     {
       "turn": 25,
       "player": "BLUE",
       "from": [
-        1,
-        5
+        2,
+        0
       ],
       "to": [
-        1,
-        4
+        3,
+        0
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656192.9239943
+      "ts": 1756739528.337256
     },
     {
       "turn": 26,
       "player": "RED",
       "from": [
-        5,
-        2
+        4,
+        3
       ],
       "to": [
         5,
@@ -684,53 +685,71 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656193.536267
+      "ts": 1756739528.9481797
     },
     {
       "turn": 27,
       "player": "BLUE",
       "from": [
-        0,
-        4
+        3,
+        0
       ],
       "to": [
-        0,
-        3
+        3,
+        1
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656194.1479788
+      "ts": 1756739529.5522838
     },
     {
       "turn": 28,
       "player": "RED",
       "from": [
-        5,
-        3
+        4,
+        4
       ],
       "to": [
-        5,
-        2
+        4,
+        3
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656194.7570455
+      "ts": 1756739530.1631985
     },
     {
       "turn": 29,
       "player": "BLUE",
       "from": [
-        0,
-        3
+        2,
+        5
       ],
       "to": [
-        0,
+        3,
+        5
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739530.7730649
+    },
+    {
+      "turn": 30,
+      "player": "RED",
+      "from": [
+        3,
+        4
+      ],
+      "to": [
+        4,
         4
       ],
       "event": {
@@ -738,17 +757,17 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656195.3615541
+      "ts": 1756739531.3798385
     },
     {
-      "turn": 30,
-      "player": "RED",
+      "turn": 31,
+      "player": "BLUE",
       "from": [
-        5,
+        0,
         2
       ],
       "to": [
-        5,
+        0,
         3
       ],
       "event": {
@@ -756,233 +775,179 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656195.9712
-    },
-    {
-      "turn": 31,
-      "player": "BLUE",
-      "from": [
-        1,
-        1
-      ],
-      "to": [
-        2,
-        1
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656196.5792024
+      "ts": 1756739531.990353
     },
     {
       "turn": 32,
       "player": "RED",
       "from": [
         5,
-        3
+        5
       ],
       "to": [
-        5,
-        2
+        4,
+        5
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656197.191975
+      "ts": 1756739532.6016262
     },
     {
       "turn": 33,
       "player": "BLUE",
       "from": [
-        1,
+        0,
         3
       ],
       "to": [
         1,
-        2
+        3
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656197.8077374
+      "ts": 1756739533.2124183
     },
     {
       "turn": 34,
       "player": "RED",
       "from": [
         4,
-        2
+        5
       ],
       "to": [
-        3,
-        2
+        5,
+        5
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656198.4196515
+      "ts": 1756739533.8216033
     },
     {
       "turn": 35,
       "player": "BLUE",
       "from": [
         0,
-        4
+        5
       ],
       "to": [
-        0,
-        3
+        1,
+        5
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656199.0272818
+      "ts": 1756739534.432502
     },
     {
       "turn": 36,
       "player": "RED",
       "from": [
-        5,
-        2
+        4,
+        0
       ],
       "to": [
-        5,
-        3
+        4,
+        1
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656199.6393108
+      "ts": 1756739535.0623128
     },
     {
       "turn": 37,
       "player": "BLUE",
       "from": [
         1,
-        4
+        1
       ],
       "to": [
-        1,
-        3
+        2,
+        1
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656200.2512064
+      "ts": 1756739535.683625
     },
     {
       "turn": 38,
       "player": "RED",
       "from": [
-        5,
-        3
+        4,
+        4
       ],
       "to": [
-        5,
-        2
+        4,
+        5
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656200.8599336
+      "ts": 1756739536.2987406
     },
     {
       "turn": 39,
       "player": "BLUE",
       "from": [
         1,
-        2
+        0
       ],
       "to": [
         2,
-        2
+        0
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656201.4727993
+      "ts": 1756739536.9139602
     },
     {
       "turn": 40,
       "player": "RED",
       "from": [
-        5,
-        2
+        4,
+        1
       ],
       "to": [
-        5,
-        3
+        4,
+        0
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656202.0828738
+      "ts": 1756739537.5295613
     },
     {
       "turn": 41,
       "player": "BLUE",
       "from": [
-        2,
-        2
-      ],
-      "to": [
         1,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656202.6955473
-    },
-    {
-      "turn": 42,
-      "player": "RED",
-      "from": [
-        5,
         3
       ],
       "to": [
-        5,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656203.304012
-    },
-    {
-      "turn": 43,
-      "player": "BLUE",
-      "from": [
-        0,
-        5
-      ],
-      "to": [
-        0,
+        1,
         4
       ],
       "event": {
@@ -990,25 +955,62 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656203.9119852
+      "ts": 1756739538.143618
     },
     {
-      "turn": 44,
+      "turn": 42,
       "player": "RED",
       "from": [
-        5,
-        2
+        4,
+        5
       ],
       "to": [
-        5,
-        3
+        4,
+        4
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656204.5209439
+      "ts": 1756739538.7534108
+    },
+    {
+      "turn": 43,
+      "player": "BLUE",
+      "from": [
+        3,
+        5
+      ],
+      "to": [
+        4,
+        5
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739539.3624713
+    },
+    {
+      "turn": 44,
+      "player": "RED",
+      "from": [
+        4,
+        4
+      ],
+      "to": [
+        4,
+        5
+      ],
+      "event": {
+        "ok": true,
+        "type": "capture",
+        "result": "attacker",
+        "flag_captured": false
+      },
+      "ts": 1756739539.977055
     },
     {
       "turn": 45,
@@ -1026,35 +1028,35 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656205.1269612
+      "ts": 1756739540.5891986
     },
     {
       "turn": 46,
       "player": "RED",
       "from": [
-        5,
-        3
+        4,
+        5
       ],
       "to": [
-        5,
-        2
+        4,
+        4
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656205.7340605
+      "ts": 1756739541.204225
     },
     {
       "turn": 47,
       "player": "BLUE",
       "from": [
         2,
-        1
+        0
       ],
       "to": [
-        2,
+        3,
         0
       ],
       "event": {
@@ -1062,136 +1064,28 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656206.3349102
+      "ts": 1756739541.8148963
     },
     {
       "turn": 48,
       "player": "RED",
       "from": [
         5,
-        2
+        1
       ],
       "to": [
-        5,
-        3
+        4,
+        1
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656206.9423368
+      "ts": 1756739542.4299955
     },
     {
       "turn": 49,
-      "player": "BLUE",
-      "from": [
-        0,
-        4
-      ],
-      "to": [
-        0,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656207.555016
-    },
-    {
-      "turn": 50,
-      "player": "RED",
-      "from": [
-        5,
-        3
-      ],
-      "to": [
-        5,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656208.166201
-    },
-    {
-      "turn": 51,
-      "player": "BLUE",
-      "from": [
-        1,
-        2
-      ],
-      "to": [
-        2,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656208.7739666
-    },
-    {
-      "turn": 52,
-      "player": "RED",
-      "from": [
-        5,
-        2
-      ],
-      "to": [
-        5,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656209.3841999
-    },
-    {
-      "turn": 53,
-      "player": "BLUE",
-      "from": [
-        0,
-        5
-      ],
-      "to": [
-        1,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656209.9947
-    },
-    {
-      "turn": 54,
-      "player": "RED",
-      "from": [
-        5,
-        3
-      ],
-      "to": [
-        5,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656210.6028621
-    },
-    {
-      "turn": 55,
       "player": "BLUE",
       "from": [
         3,
@@ -1207,36 +1101,54 @@
         "result": "both",
         "flag_captured": false
       },
-      "ts": 1756656211.212318
+      "ts": 1756739543.0445008
     },
     {
-      "turn": 56,
+      "turn": 50,
       "player": "RED",
       "from": [
-        3,
-        2
+        4,
+        0
       ],
       "to": [
         3,
-        3
+        0
       ],
       "event": {
         "ok": true,
         "type": "capture",
-        "result": "both",
+        "result": "defender",
         "flag_captured": false
       },
-      "ts": 1756656211.815942
+      "ts": 1756739543.653828
     },
     {
-      "turn": 57,
+      "turn": 51,
       "player": "BLUE",
       "from": [
-        2,
-        0
+        1,
+        5
       ],
       "to": [
         2,
+        5
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739544.25866
+    },
+    {
+      "turn": 52,
+      "player": "RED",
+      "from": [
+        5,
+        2
+      ],
+      "to": [
+        5,
         1
       ],
       "event": {
@@ -1244,7 +1156,98 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656212.4227788
+      "ts": 1756739544.864969
+    },
+    {
+      "turn": 53,
+      "player": "BLUE",
+      "from": [
+        1,
+        4
+      ],
+      "to": [
+        2,
+        4
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739545.4714453
+    },
+    {
+      "turn": 54,
+      "player": "RED",
+      "from": [
+        5,
+        0
+      ],
+      "to": [
+        4,
+        0
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739546.0754044
+    },
+    {
+      "turn": 55,
+      "player": "BLUE",
+      "from": [
+        3,
+        1
+      ],
+      "to": [
+        4,
+        1
+      ],
+      "event": {
+        "ok": true,
+        "type": "capture",
+        "result": "both",
+        "flag_captured": false
+      },
+      "ts": 1756739546.6810238
+    },
+    {
+      "turn": 56,
+      "player": "RED",
+      "from": [
+        5,
+        3
+      ],
+      "to": [
+        5,
+        2
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739547.286177
+    },
+    {
+      "turn": 57,
+      "player": "BLUE",
+      "from": [
+        2,
+        4
+      ],
+      "to": [
+        3,
+        4
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739547.8929076
     },
     {
       "turn": 58,
@@ -1262,125 +1265,17 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656213.0277483
+      "ts": 1756739548.4820445
     },
     {
       "turn": 59,
       "player": "BLUE",
       "from": [
         0,
-        2
+        4
       ],
       "to": [
         1,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656213.632112
-    },
-    {
-      "turn": 60,
-      "player": "RED",
-      "from": [
-        5,
-        3
-      ],
-      "to": [
-        5,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656214.2360566
-    },
-    {
-      "turn": 61,
-      "player": "BLUE",
-      "from": [
-        1,
-        5
-      ],
-      "to": [
-        0,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656214.8405187
-    },
-    {
-      "turn": 62,
-      "player": "RED",
-      "from": [
-        5,
-        2
-      ],
-      "to": [
-        5,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656215.4469824
-    },
-    {
-      "turn": 63,
-      "player": "BLUE",
-      "from": [
-        2,
-        2
-      ],
-      "to": [
-        3,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656216.0379457
-    },
-    {
-      "turn": 64,
-      "player": "RED",
-      "from": [
-        5,
-        3
-      ],
-      "to": [
-        5,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656216.6394734
-    },
-    {
-      "turn": 65,
-      "player": "BLUE",
-      "from": [
-        0,
-        5
-      ],
-      "to": [
-        0,
         4
       ],
       "event": {
@@ -1388,71 +1283,35 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656217.2472231
+      "ts": 1756739549.0782666
     },
     {
-      "turn": 66,
+      "turn": 60,
       "player": "RED",
       "from": [
-        5,
-        2
-      ],
-      "to": [
-        5,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656217.8514178
-    },
-    {
-      "turn": 67,
-      "player": "BLUE",
-      "from": [
-        0,
-        3
-      ],
-      "to": [
-        0,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656218.4588938
-    },
-    {
-      "turn": 68,
-      "player": "RED",
-      "from": [
-        5,
-        3
-      ],
-      "to": [
-        5,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656219.065517
-    },
-    {
-      "turn": 69,
-      "player": "BLUE",
-      "from": [
-        1,
+        4,
         0
       ],
       "to": [
-        1,
+        5,
+        0
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739549.682177
+    },
+    {
+      "turn": 61,
+      "player": "BLUE",
+      "from": [
+        2,
+        1
+      ],
+      "to": [
+        3,
         1
       ],
       "event": {
@@ -1460,107 +1319,71 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656219.6723285
+      "ts": 1756739550.2833085
     },
     {
-      "turn": 70,
+      "turn": 62,
       "player": "RED",
       "from": [
-        5,
-        2
-      ],
-      "to": [
-        5,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656220.2814946
-    },
-    {
-      "turn": 71,
-      "player": "BLUE",
-      "from": [
-        3,
+        4,
         2
       ],
       "to": [
         4,
-        2
+        1
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656220.8900447
+      "ts": 1756739550.8701527
     },
     {
-      "turn": 72,
-      "player": "RED",
-      "from": [
-        5,
-        3
-      ],
-      "to": [
-        5,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656221.498011
-    },
-    {
-      "turn": 73,
+      "turn": 63,
       "player": "BLUE",
       "from": [
         1,
-        3
+        4
       ],
       "to": [
         2,
-        3
+        4
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656222.118073
+      "ts": 1756739551.4681337
     },
     {
-      "turn": 74,
+      "turn": 64,
       "player": "RED",
       "from": [
         5,
-        2
+        1
       ],
       "to": [
         5,
-        3
+        2
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656222.7330925
+      "ts": 1756739552.072985
     },
     {
-      "turn": 75,
+      "turn": 65,
       "player": "BLUE",
       "from": [
-        4,
-        2
+        3,
+        4
       ],
       "to": [
-        4,
+        3,
         3
       ],
       "event": {
@@ -1569,79 +1392,261 @@
         "result": "attacker",
         "flag_captured": false
       },
-      "ts": 1756656223.3521898
+      "ts": 1756739552.6828141
+    },
+    {
+      "turn": 66,
+      "player": "RED",
+      "from": [
+        4,
+        1
+      ],
+      "to": [
+        5,
+        1
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739553.2854884
+    },
+    {
+      "turn": 67,
+      "player": "BLUE",
+      "from": [
+        2,
+        5
+      ],
+      "to": [
+        3,
+        5
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739553.892171
+    },
+    {
+      "turn": 68,
+      "player": "RED",
+      "from": [
+        5,
+        2
+      ],
+      "to": [
+        4,
+        2
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739554.5003674
+    },
+    {
+      "turn": 69,
+      "player": "BLUE",
+      "from": [
+        3,
+        5
+      ],
+      "to": [
+        4,
+        5
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739555.1065044
+    },
+    {
+      "turn": 70,
+      "player": "RED",
+      "from": [
+        5,
+        3
+      ],
+      "to": [
+        5,
+        2
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739555.7174208
+    },
+    {
+      "turn": 71,
+      "player": "BLUE",
+      "from": [
+        2,
+        4
+      ],
+      "to": [
+        3,
+        4
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739556.325609
+    },
+    {
+      "turn": 72,
+      "player": "RED",
+      "from": [
+        5,
+        5
+      ],
+      "to": [
+        4,
+        5
+      ],
+      "event": {
+        "ok": true,
+        "type": "capture",
+        "result": "both",
+        "flag_captured": false
+      },
+      "ts": 1756739556.9277987
+    },
+    {
+      "turn": 73,
+      "player": "BLUE",
+      "from": [
+        3,
+        4
+      ],
+      "to": [
+        3,
+        5
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739557.5299454
+    },
+    {
+      "turn": 74,
+      "player": "RED",
+      "from": [
+        4,
+        2
+      ],
+      "to": [
+        4,
+        1
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739558.1364496
+    },
+    {
+      "turn": 75,
+      "player": "BLUE",
+      "from": [
+        3,
+        5
+      ],
+      "to": [
+        4,
+        5
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739558.7369623
     },
     {
       "turn": 76,
       "player": "RED",
       "from": [
         5,
-        3
+        2
       ],
       "to": [
         5,
-        2
+        3
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656223.9630454
+      "ts": 1756739559.3429425
     },
     {
       "turn": 77,
       "player": "BLUE",
       "from": [
-        2,
+        3,
         3
       ],
       "to": [
-        3,
+        4,
         3
       ],
       "event": {
         "ok": true,
-        "type": "move",
+        "type": "capture",
+        "result": "both",
         "flag_captured": false
       },
-      "ts": 1756656224.5728965
+      "ts": 1756739559.9472294
     },
     {
       "turn": 78,
       "player": "RED",
       "from": [
         5,
-        2
+        0
       ],
       "to": [
-        5,
-        3
+        4,
+        0
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656225.2056139
+      "ts": 1756739560.547802
     },
     {
       "turn": 79,
       "player": "BLUE",
       "from": [
-        0,
-        4
+        4,
+        5
       ],
       "to": [
-        1,
-        4
+        5,
+        5
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656225.8073437
+      "ts": 1756739561.1526833
     },
     {
       "turn": 80,
@@ -1659,25 +1664,26 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656226.4070768
+      "ts": 1756739561.7538686
     },
     {
       "turn": 81,
       "player": "BLUE",
       "from": [
         3,
-        3
+        0
       ],
       "to": [
-        2,
-        3
+        4,
+        0
       ],
       "event": {
         "ok": true,
-        "type": "move",
+        "type": "capture",
+        "result": "defender",
         "flag_captured": false
       },
-      "ts": 1756656227.0097978
+      "ts": 1756739562.3592064
     },
     {
       "turn": 82,
@@ -1695,25 +1701,26 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656227.6173093
+      "ts": 1756739562.9660757
     },
     {
       "turn": 83,
       "player": "BLUE",
       "from": [
-        2,
+        3,
         1
       ],
       "to": [
-        2,
-        2
+        4,
+        1
       ],
       "event": {
         "ok": true,
-        "type": "move",
+        "type": "capture",
+        "result": "attacker",
         "flag_captured": false
       },
-      "ts": 1756656228.2317073
+      "ts": 1756739563.5735044
     },
     {
       "turn": 84,
@@ -1731,17 +1738,17 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656228.8432386
+      "ts": 1756739564.1760461
     },
     {
       "turn": 85,
       "player": "BLUE",
       "from": [
-        1,
-        2
+        2,
+        3
       ],
       "to": [
-        1,
+        3,
         3
       ],
       "event": {
@@ -1749,7 +1756,7 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656229.452952
+      "ts": 1756739564.7762039
     },
     {
       "turn": 86,
@@ -1767,17 +1774,17 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656230.063736
+      "ts": 1756739565.3812852
     },
     {
       "turn": 87,
       "player": "BLUE",
       "from": [
-        0,
-        2
+        4,
+        1
       ],
       "to": [
-        1,
+        4,
         2
       ],
       "event": {
@@ -1785,7 +1792,7 @@
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656230.6738439
+      "ts": 1756739565.9845464
     },
     {
       "turn": 88,
@@ -1795,75 +1802,21 @@
         3
       ],
       "to": [
-        5,
-        2
+        4,
+        3
       ],
       "event": {
         "ok": true,
         "type": "move",
         "flag_captured": false
       },
-      "ts": 1756656231.2821186
+      "ts": 1756739566.587278
     },
     {
       "turn": 89,
       "player": "BLUE",
       "from": [
-        0,
-        0
-      ],
-      "to": [
-        1,
-        0
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656231.8916576
-    },
-    {
-      "turn": 90,
-      "player": "RED",
-      "from": [
-        5,
-        2
-      ],
-      "to": [
-        5,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656232.497973
-    },
-    {
-      "turn": 91,
-      "player": "BLUE",
-      "from": [
-        1,
-        3
-      ],
-      "to": [
-        0,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656233.114797
-    },
-    {
-      "turn": 92,
-      "player": "RED",
-      "from": [
-        5,
+        3,
         3
       ],
       "to": [
@@ -1876,970 +1829,87 @@
         "result": "defender",
         "flag_captured": false
       },
-      "ts": 1756656233.7273986
+      "ts": 1756739567.1913576
+    },
+    {
+      "turn": 90,
+      "player": "RED",
+      "from": [
+        4,
+        0
+      ],
+      "to": [
+        3,
+        0
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739567.790399
+    },
+    {
+      "turn": 91,
+      "player": "BLUE",
+      "from": [
+        4,
+        2
+      ],
+      "to": [
+        5,
+        2
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739568.3964348
+    },
+    {
+      "turn": 92,
+      "player": "RED",
+      "from": [
+        4,
+        3
+      ],
+      "to": [
+        5,
+        3
+      ],
+      "event": {
+        "ok": true,
+        "type": "move",
+        "flag_captured": false
+      },
+      "ts": 1756739569.0016766
     },
     {
       "turn": 93,
       "player": "BLUE",
       "from": [
-        1,
-        2
-      ],
-      "to": [
-        0,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656234.3357258
-    },
-    {
-      "turn": 94,
-      "player": "RED",
-      "from": [
-        4,
-        0
-      ],
-      "to": [
-        3,
-        0
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656234.944945
-    },
-    {
-      "turn": 95,
-      "player": "BLUE",
-      "from": [
-        1,
-        1
-      ],
-      "to": [
-        1,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656235.5514953
-    },
-    {
-      "turn": 96,
-      "player": "RED",
-      "from": [
-        3,
-        0
-      ],
-      "to": [
-        3,
-        1
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656236.1767054
-    },
-    {
-      "turn": 97,
-      "player": "BLUE",
-      "from": [
-        4,
-        3
-      ],
-      "to": [
-        4,
-        4
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656236.7863753
-    },
-    {
-      "turn": 98,
-      "player": "RED",
-      "from": [
-        3,
-        1
-      ],
-      "to": [
-        3,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656237.4073327
-    },
-    {
-      "turn": 99,
-      "player": "BLUE",
-      "from": [
-        1,
-        4
-      ],
-      "to": [
-        0,
-        4
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656238.0192626
-    },
-    {
-      "turn": 100,
-      "player": "RED",
-      "from": [
-        3,
-        2
-      ],
-      "to": [
-        3,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656238.6281323
-    },
-    {
-      "turn": 101,
-      "player": "BLUE",
-      "from": [
-        0,
-        4
-      ],
-      "to": [
-        0,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656239.221812
-    },
-    {
-      "turn": 102,
-      "player": "RED",
-      "from": [
-        4,
+        5,
         5
       ],
       "to": [
-        4,
+        5,
         4
       ],
       "event": {
         "ok": true,
         "type": "capture",
         "result": "attacker",
-        "flag_captured": false
+        "flag_captured": true
       },
-      "ts": 1756656239.8281229
-    },
-    {
-      "turn": 103,
-      "player": "BLUE",
-      "from": [
-        1,
-        0
-      ],
-      "to": [
-        1,
-        1
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656240.4342737
-    },
-    {
-      "turn": 104,
-      "player": "RED",
-      "from": [
-        4,
-        1
-      ],
-      "to": [
-        4,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656241.0376194
-    },
-    {
-      "turn": 105,
-      "player": "BLUE",
-      "from": [
-        2,
-        3
-      ],
-      "to": [
-        3,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "capture",
-        "result": "defender",
-        "flag_captured": false
-      },
-      "ts": 1756656241.6441073
-    },
-    {
-      "turn": 106,
-      "player": "RED",
-      "from": [
-        4,
-        2
-      ],
-      "to": [
-        4,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656242.2473655
-    },
-    {
-      "turn": 107,
-      "player": "BLUE",
-      "from": [
-        1,
-        1
-      ],
-      "to": [
-        2,
-        1
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656242.8522358
-    },
-    {
-      "turn": 108,
-      "player": "RED",
-      "from": [
-        5,
-        0
-      ],
-      "to": [
-        4,
-        0
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656243.4574249
-    },
-    {
-      "turn": 109,
-      "player": "BLUE",
-      "from": [
-        2,
-        1
-      ],
-      "to": [
-        2,
-        0
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656244.0677865
-    },
-    {
-      "turn": 110,
-      "player": "RED",
-      "from": [
-        5,
-        5
-      ],
-      "to": [
-        4,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656244.673885
-    },
-    {
-      "turn": 111,
-      "player": "BLUE",
-      "from": [
-        0,
-        5
-      ],
-      "to": [
-        1,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656245.2827263
-    },
-    {
-      "turn": 112,
-      "player": "RED",
-      "from": [
-        4,
-        5
-      ],
-      "to": [
-        5,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656245.8923893
-    },
-    {
-      "turn": 113,
-      "player": "BLUE",
-      "from": [
-        2,
-        0
-      ],
-      "to": [
-        1,
-        0
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656246.500305
-    },
-    {
-      "turn": 114,
-      "player": "RED",
-      "from": [
-        4,
-        3
-      ],
-      "to": [
-        5,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656247.1041484
-    },
-    {
-      "turn": 115,
-      "player": "BLUE",
-      "from": [
-        1,
-        0
-      ],
-      "to": [
-        2,
-        0
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656247.7081752
-    },
-    {
-      "turn": 116,
-      "player": "RED",
-      "from": [
-        5,
-        3
-      ],
-      "to": [
-        4,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656248.3178039
-    },
-    {
-      "turn": 117,
-      "player": "BLUE",
-      "from": [
-        2,
-        0
-      ],
-      "to": [
-        3,
-        0
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656248.9317975
-    },
-    {
-      "turn": 118,
-      "player": "RED",
-      "from": [
-        5,
-        5
-      ],
-      "to": [
-        4,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656249.545218
-    },
-    {
-      "turn": 119,
-      "player": "BLUE",
-      "from": [
-        0,
-        3
-      ],
-      "to": [
-        0,
-        4
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656250.1492255
-    },
-    {
-      "turn": 120,
-      "player": "RED",
-      "from": [
-        4,
-        5
-      ],
-      "to": [
-        5,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656250.7508929
-    },
-    {
-      "turn": 121,
-      "player": "BLUE",
-      "from": [
-        0,
-        2
-      ],
-      "to": [
-        0,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656251.3550882
-    },
-    {
-      "turn": 122,
-      "player": "RED",
-      "from": [
-        5,
-        5
-      ],
-      "to": [
-        4,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656251.9398203
-    },
-    {
-      "turn": 123,
-      "player": "BLUE",
-      "from": [
-        0,
-        3
-      ],
-      "to": [
-        0,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656252.5416758
-    },
-    {
-      "turn": 124,
-      "player": "RED",
-      "from": [
-        4,
-        5
-      ],
-      "to": [
-        5,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656253.1461878
-    },
-    {
-      "turn": 125,
-      "player": "BLUE",
-      "from": [
-        0,
-        4
-      ],
-      "to": [
-        0,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656253.7500753
-    },
-    {
-      "turn": 126,
-      "player": "RED",
-      "from": [
-        5,
-        5
-      ],
-      "to": [
-        4,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656254.355228
-    },
-    {
-      "turn": 127,
-      "player": "BLUE",
-      "from": [
-        0,
-        5
-      ],
-      "to": [
-        0,
-        4
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656254.945009
-    },
-    {
-      "turn": 128,
-      "player": "RED",
-      "from": [
-        3,
-        3
-      ],
-      "to": [
-        3,
-        4
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656255.5495424
-    },
-    {
-      "turn": 129,
-      "player": "BLUE",
-      "from": [
-        3,
-        0
-      ],
-      "to": [
-        3,
-        1
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656256.1521254
-    },
-    {
-      "turn": 130,
-      "player": "RED",
-      "from": [
-        3,
-        4
-      ],
-      "to": [
-        3,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656256.7585464
-    },
-    {
-      "turn": 131,
-      "player": "BLUE",
-      "from": [
-        2,
-        2
-      ],
-      "to": [
-        3,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656257.3685808
-    },
-    {
-      "turn": 132,
-      "player": "RED",
-      "from": [
-        4,
-        5
-      ],
-      "to": [
-        5,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656257.9731472
-    },
-    {
-      "turn": 133,
-      "player": "BLUE",
-      "from": [
-        0,
-        4
-      ],
-      "to": [
-        0,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656258.579353
-    },
-    {
-      "turn": 134,
-      "player": "RED",
-      "from": [
-        5,
-        5
-      ],
-      "to": [
-        4,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656259.1865735
-    },
-    {
-      "turn": 135,
-      "player": "BLUE",
-      "from": [
-        3,
-        1
-      ],
-      "to": [
-        4,
-        1
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656259.7895555
-    },
-    {
-      "turn": 136,
-      "player": "RED",
-      "from": [
-        4,
-        4
-      ],
-      "to": [
-        3,
-        4
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656260.3956926
-    },
-    {
-      "turn": 137,
-      "player": "BLUE",
-      "from": [
-        3,
-        2
-      ],
-      "to": [
-        3,
-        1
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656261.0045578
-    },
-    {
-      "turn": 138,
-      "player": "RED",
-      "from": [
-        4,
-        5
-      ],
-      "to": [
-        5,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656261.6139188
-    },
-    {
-      "turn": 139,
-      "player": "BLUE",
-      "from": [
-        4,
-        1
-      ],
-      "to": [
-        4,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656262.2094455
-    },
-    {
-      "turn": 140,
-      "player": "RED",
-      "from": [
-        3,
-        4
-      ],
-      "to": [
-        4,
-        4
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656262.796911
-    },
-    {
-      "turn": 141,
-      "player": "BLUE",
-      "from": [
-        0,
-        3
-      ],
-      "to": [
-        1,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656263.3909886
-    },
-    {
-      "turn": 142,
-      "player": "RED",
-      "from": [
-        4,
-        3
-      ],
-      "to": [
-        5,
-        3
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656263.9933367
-    },
-    {
-      "turn": 143,
-      "player": "BLUE",
-      "from": [
-        3,
-        1
-      ],
-      "to": [
-        2,
-        1
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656264.5975971
-    },
-    {
-      "turn": 144,
-      "player": "RED",
-      "from": [
-        5,
-        3
-      ],
-      "to": [
-        5,
-        2
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656265.2042642
-    },
-    {
-      "turn": 145,
-      "player": "BLUE",
-      "from": [
-        1,
-        5
-      ],
-      "to": [
-        0,
-        5
-      ],
-      "event": {
-        "ok": true,
-        "type": "move",
-        "flag_captured": false
-      },
-      "ts": 1756656265.8129826
+      "ts": 1756739569.6048234
     }
   ],
   "outcome": {
-    "winner": null,
-    "reason": "draw"
+    "winner": "BLUE",
+    "reason": "flag_captured"
   },
   "meta": {
-    "created": "2025-08-31T16:02:57.159769Z"
+    "created": "2025-09-01T15:11:37.943344Z"
   }
 }

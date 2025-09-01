@@ -71,8 +71,10 @@ def play_episode(net: TinyUNet):
         returns.append((logp,gain))
     return returns
 
-def train(episodes, out, lr_step=5, lr_gamma=0.9):
-    net=TinyUNet()
+def train(episodes, out, from_ckpt=None,lr_step=5, lr_gamma=0.9):
+    net = TinyUNet() 
+    if from_ckpt :
+        net.load_state_dict(torch.load(from_ckpt)) 
     opt=optim.Adam(net.parameters(), lr=1e-3)
     scheduler = optim.lr_scheduler.StepLR(opt, step_size=lr_step, gamma=lr_gamma)
     for _ in trange(episodes):
@@ -90,5 +92,6 @@ if __name__=='__main__':
     ap=argparse.ArgumentParser()
     ap.add_argument('--episodes', type=int, default=20)
     ap.add_argument('--out', type=str, default='checkpoints/rl.pt')
+    ap.add_argument('--from_ckpt',type=str,default=None)
     args=ap.parse_args()
-    train(args.episodes, args.out)
+    train(args.episodes, args.out,from_ckpt=args.from_ckpt)
