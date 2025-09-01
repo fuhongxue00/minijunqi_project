@@ -1,5 +1,8 @@
 
 # -*- coding: utf-8 -*-
+# import sys, os
+# sys.path.append(os.path.dirname(__file__))
+
 import argparse, random
 import torch, torch.nn as nn, torch.optim as optim
 from tqdm import trange
@@ -68,22 +71,24 @@ def play_episode(net: TinyUNet):
         returns.append((logp,gain))
     return returns
 
-def train(episodes, out):
+def train(episodes, out, lr_step=5, lr_gamma=0.9):
     net=TinyUNet()
     opt=optim.Adam(net.parameters(), lr=1e-3)
+    scheduler = optim.lr_scheduler.StepLR(opt, step_size=lr_step, gamma=lr_gamma)
     for _ in trange(episodes):
         traj=play_episode(net)
         if not traj: continue
         loss=0.0
         for logp,R in traj: loss=loss - logp*R
         opt.zero_grad(); loss.backward(); opt.step()
+        scheduler.step()
     import os
     os.makedirs(os.path.dirname(out) or '.', exist_ok=True)
     torch.save(net.state_dict(), out); print('saved:', out)
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser()
-    ap.add_argument('--episodes', type=int, default=10)
+    ap.add_argument('--episodes', type=int, default=20)
     ap.add_argument('--out', type=str, default='checkpoints/rl.pt')
     args=ap.parse_args()
     train(args.episodes, args.out)
