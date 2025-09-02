@@ -14,7 +14,7 @@ def main():
     ap.add_argument('--ckpt_red', type=str, default=None)
     ap.add_argument('--ckpt_blue', type=str, default=None)
     ap.add_argument('--step', action='store_true')
-    ap.add_argument('--sleep', type=float, default=0.1)
+    ap.add_argument('--sleep', type=float, default=0)
     ap.add_argument('--replay_out', type=str, default='replays/ai_vs_ai.json')
     ap.add_argument('--renders', type=str, default='renders')
     args = ap.parse_args()
@@ -31,7 +31,7 @@ def main():
     cur = Player.RED
     while game.state.phase == 'deploy':
         agent = red if cur==Player.RED else blue
-        piece, rc = agent.select_deploy(game, cur)
+        piece, rc ,_= agent.select_deploy(game, cur)
         ok = game.deploy(cur, piece, rc)
         if ok: logger.log_deploy(cur, piece, rc)
         cur = game.state.turn
@@ -47,12 +47,12 @@ def main():
         time.sleep(args.sleep)
         player = game.state.turn
         agent = red if player==Player.RED else blue
-        src,dst = agent.select_move(game, player)
+        src,dst,_,_ = agent.select_move(game, player)
         ev = game.step(src,dst)
         logger.log_move(turn_idx, player, src, dst, ev); turn_idx += 1
         print(ascii_board(game.state.board, viewer=Player.RED, reveal_all=True))
         save_triple_latest(game.state.board, out_dir=args.renders, stem='board_latest')
     logger.set_outcome(game.state.winner, game.state.end_reason)
     logger.save(args.replay_out)
-    print('对局结束：', game.state.end_reason, 'winner=', game.state.winner)
+    print('对局结束：', game.state.end_reason, 'winner=', game.state.winner,'总步数:',turn_idx)
 if __name__ == '__main__': main()

@@ -31,6 +31,8 @@ def main():
     ai_side = Player.BLUE if human==Player.RED else Player.RED
     game = Game(GameConfig())
     agent = Agent(); 
+    if args.human_random_deploy:
+        agent_for_humandeploy = Agent()
     if args.ckpt: agent.load(args.ckpt)
     logger = ReplayLogger(); logger.set_players('HUMAN', 'AI')
     while game.state.phase == 'deploy':
@@ -39,7 +41,7 @@ def main():
             # 连续自动下子直到轮到 AI 或进入行棋阶段
             did_any = False
             while game.state.phase == 'deploy' and game.state.turn == human:
-                pid, rc = agent.select_deploy(game, human)
+                pid, rc ,_= agent_for_humandeploy.select_deploy(game, human)
                 ok = game.deploy(human, pid, rc)
                 if ok:
                     logger.log_deploy(human, pid, rc)
@@ -57,7 +59,7 @@ def main():
             if game.deploy(cur, pid, rc): logger.log_deploy(cur, pid, rc)
             else: print('非法位置或该棋子已用完')
         else:
-            pid, rc = agent.select_deploy(game, cur)
+            pid, rc,_ = agent.select_deploy(game, cur)
             game.deploy(cur, pid, rc); logger.log_deploy(cur, pid, rc)
             print(f'AI 部署: {pid.name} @ {rc}')
         save_triple_latest(game.state.board, out_dir=args.renders, stem='board_latest')
@@ -77,9 +79,9 @@ def main():
             if not ev.get('ok'): print('非法走法')
             else: logger.log_move(turn_idx, human, src, dst, ev); turn_idx+=1
         else:
-            src,dst = agent.select_move(game, game.state.turn)
+            src,dst,_,_ = agent.select_move(game, game.state.turn)
             ev = game.step(src,dst); logger.log_move(turn_idx, ai_side, src, dst, ev); turn_idx+=1
             print(f'AI: {src}->{dst}  事件={ev}')
     logger.set_outcome(game.state.winner, game.state.end_reason); logger.save(args.replay_out)
-    print('对局结束：', game.state.end_reason, 'winner=', game.state.winner)
+    print('对局结束：', game.state.end_reason, 'winner=', game.state.winner,'总步数:',turn_idx)
 if __name__ == '__main__': main()
