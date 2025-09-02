@@ -36,6 +36,8 @@ def play_episode(net:PolicyNet):
     g=Game(GameConfig())
     red_agent = Agent(net=net)
     blue_agent = Agent(net=net)
+    red_agent.reset()
+    blue_agent.reset()
     # random_deploy(g, Player.RED); random_deploy(g, Player.BLUE)
     # g.state.phase='play'; g.state.turn=Player.RED
     while not g.is_over():
@@ -66,7 +68,7 @@ def play_episode(net:PolicyNet):
     if g.state.winner is not None:
         r=5.0 if g.state.winner==Player.RED else -5.0
     elif g.state.end_reason=='draw':
-        r=-1.0
+        r=-3.0
     else:
         print(f"end_reason:{g.end_reason}")
         raise ValueError("出现了未知的结束原因")
