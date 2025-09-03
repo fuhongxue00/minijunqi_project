@@ -75,13 +75,13 @@ def play_episode(net:PolicyNet):
         print(f"end_reason:{g.end_reason}")
         raise ValueError("出现了未知的结束原因")
     returns=[]
-    for logp,player,result in traj:
+    for index,(logp,player,result) in enumerate(traj):
         gain=r if player==Player.RED else -r
         if result == 'attacker':
-            gain +=5
+            gain += 10 * index/len(traj)
             # print('主动吃子 r+=5')
         elif result == 'defender':
-            gain -=4
+            gain -= 3
             # print('送子，r-=1')
         returns.append((logp,gain))
     return returns
