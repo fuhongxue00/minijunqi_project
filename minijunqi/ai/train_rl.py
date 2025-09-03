@@ -40,33 +40,35 @@ def play_episode(net:PolicyNet):
     blue_agent.reset()
     # random_deploy(g, Player.RED); random_deploy(g, Player.BLUE)
     # g.state.phase='play'; g.state.turn=Player.RED
+    
+    while g.state.phase == "deploy":
+        player = g.state.turn
+        play_agent = red_agent if player == Player.RED else blue_agent
+        pid,rc,pc = play_agent.select_deploy(g,player)
+        r,c=rc
+        idx = r*BOARD_W+c
+        logp=torch.log(pc[idx]+1e-9)
+        result = 'deploy'
+        traj.append((logp, player,result))
+        ev=g.deploy(player,pid,rc)
+    red_agent.reset()
+    blue_agent.reset()
     while not g.is_over():
-        if g.state.phase == "deploy":
-            player = g.state.turn
-            play_agent = red_agent if player == Player.RED else blue_agent
-            pid,rc,pc = play_agent.select_deploy(g,player)
-            r,c=rc
-            idx = r*BOARD_W+c
-            logp=torch.log(pc[idx]+1e-9)
-            result = 'deploy'
-            traj.append((logp, player,result))
-            ev=g.deploy(player,pid,rc)
-        else:
-            player = g.state.turn
-            play_agent = red_agent if player == Player.RED else blue_agent
-            # 起点，终点，起点概率张量，重点概率张量
-            src,dst,ps,pt = play_agent.select_move(g, player)
-            s_r,s_c = src
-            src_idx = s_r*BOARD_W+s_c
-            t_r,t_c = dst
-            dir_idx = t_r*BOARD_W+t_c
-            logp = torch.log(ps[src_idx]+1e-9)+torch.log(pt[dir_idx]+1e-9)
-            
-            ev=g.step(src,dst)
-            result = ev.get('result','default_justmove')
-            traj.append((logp, player,result))
+        player = g.state.turn
+        play_agent = red_agent if player == Player.RED else blue_agent
+        # 起点，终点，起点概率张量，重点概率张量
+        src,dst,ps,pt = play_agent.select_move(g, player)
+        s_r,s_c = src
+        src_idx = s_r*BOARD_W+s_c
+        t_r,t_c = dst
+        dir_idx = t_r*BOARD_W+t_c
+        logp = torch.log(ps[src_idx]+1e-9)+torch.log(pt[dir_idx]+1e-9)
+        
+        ev=g.step(src,dst)
+        result = ev.get('result','default_justmove')
+        traj.append((logp, player,result))
     if g.state.winner is not None:
-        r=5.0 if g.state.winner==Player.RED else -5.0
+        r=10.0 if g.state.winner==Player.RED else -5.0
     elif g.state.end_reason=='draw':
         r=-3.0
     else:
@@ -88,7 +90,7 @@ def train(episodes, out, from_ckpt=None,lr_step=5, lr_gamma=0.9):
     net = PolicyNet()
     if from_ckpt :
         net.load_state_dict(torch.load(from_ckpt)) 
-    opt=optim.Adam(net.parameters(), lr=1e-3)
+    opt=optim.Adam(net.parameters(), lr=1e-4)
     scheduler = optim.lr_scheduler.StepLR(opt, step_size=lr_step, gamma=lr_gamma)
     for _ in trange(episodes):
         traj=play_episode(net)
