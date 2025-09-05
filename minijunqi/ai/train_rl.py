@@ -8,6 +8,7 @@ import torch, torch.nn as nn, torch.optim as optim
 from tqdm import trange
 from ..constants import Player, PieceID, BOARD_H, BOARD_W, DEFAULT_NO_BATTLE_DRAW, INITIAL_POOL
 from ..game import Game, GameConfig
+from ..render import ascii_board
 # from .net import TinyUNet
 from .net import PolicyNet
 from .policy import SharedPolicy
@@ -51,6 +52,10 @@ def play_episode(net:PolicyNet):
         result = 'deploy'
         traj.append((logp, player,result))
         ev=g.deploy(player,pid,rc)
+        # print(ev)
+        # print('deploy',pid,rc)
+        # print('pc',pc)
+        # print(ascii_board(g.state.board, viewer=Player.RED, reveal_all=True))
     red_agent.reset()
     blue_agent.reset()
     while not g.is_over():
@@ -66,46 +71,54 @@ def play_episode(net:PolicyNet):
         
         ev=g.step(src,dst)
         result = ev.get('result','default_justmove')
+        # print(ev)
         traj.append((logp, player,result))
+        # print(ascii_board(g.state.board, viewer=Player.RED, reveal_all=True))
     if g.state.winner is not None:
         r=10.0 if g.state.winner==Player.RED else -5.0
     elif g.state.end_reason=='draw':
-        r=-3.0
+        r=0
     else:
         print(f"end_reason:{g.end_reason}")
         raise ValueError("出现了未知的结束原因")
     returns=[]
     for index,(logp,player,result) in enumerate(traj):
         gain=r if player==Player.RED else -r
+        if g.state.end_reason=='draw':
+            gain -= 5
         if result == 'attacker':
-            gain += 10 * index/len(traj)
+            gain += 20 * index/len(traj)
             # print('主动吃子 r+=5')
         elif result == 'defender':
-            gain -= 3
+            gain -= 1
             # print('送子，r-=1')
         returns.append((logp,gain))
     return returns
 
-def train(episodes, out, from_ckpt=None,lr_step=5, lr_gamma=0.9):
+def train(episodes, out, from_ckpt=None,lr_step=2, lr_gamma=0.9):
     net = PolicyNet()
     if from_ckpt :
         net.load_state_dict(torch.load(from_ckpt)) 
-    opt=optim.Adam(net.parameters(), lr=1e-4)
+    opt=optim.Adam(net.parameters(), lr=1e-2)
     scheduler = optim.lr_scheduler.StepLR(opt, step_size=lr_step, gamma=lr_gamma)
     for _ in trange(episodes):
         traj=play_episode(net)
         if not traj: continue
         loss=0.0
-        for logp,R in traj: loss=loss - logp*R
+        for logp,R in traj:
+            # print('logp:',logp.item(),'R:',R)
+            loss=loss - logp*R
         opt.zero_grad(); loss.backward(); opt.step()
         scheduler.step()
+        # print('loss:',loss.item())
+        # print('lr:',scheduler.get_last_lr()[0])
     import os
     os.makedirs(os.path.dirname(out) or '.', exist_ok=True)
     torch.save(net.state_dict(), out); print('saved:', out)
 
 if __name__=='__main__':
     ap=argparse.ArgumentParser()
-    ap.add_argument('--episodes', type=int, default=20)
+    ap.add_argument('--episodes', type=int, default=30)
     ap.add_argument('--out', type=str, default='checkpoints/rl.pt')
     ap.add_argument('--from_ckpt',type=str,default=None)
     args=ap.parse_args()

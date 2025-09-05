@@ -44,7 +44,7 @@ STRENGTH = {
 }
 
 FLAG_ALLOWED_COLS = (1, 4)
-DEFAULT_NO_BATTLE_DRAW = 40
+DEFAULT_NO_BATTLE_DRAW = 20
 
 # 预定义部署顺序（旗子先放，其余按固定顺序展开多份）
 DEPLOY_SEQUENCE = (

@@ -126,7 +126,7 @@ HW = BOARD_H * BOARD_W
 
 def masked_softmax(logits: torch.Tensor, mask: torch.Tensor, dim: int) -> torch.Tensor:
     logits = logits.clone()
-    logits[mask==0] = -1e9
+    logits[mask==0] = float('-inf')
     return F.softmax(logits, dim=dim)
 
 def rotate_hw(x_hw: torch.Tensor) -> torch.Tensor:
@@ -229,11 +229,13 @@ class SharedPolicy:
         pc = pc_tensor.cpu().detach().numpy()
         if pc.sum() <= 0:
             sel_idx = int((cell_mask_rot > 0).nonzero()[0]) if (cell_mask_rot > 0).any() else 0
+            # print('policy232:deploy',sel_idx)
         else:
             sel_idx = int(np.random.choice(HW, p=pc))
         rr, cc = divmod(sel_idx, BOARD_W)
         if viewer == getattr(Player, 'BLUE', 1):
             rr, cc = BOARD_H-1-rr, BOARD_W-1-cc
+            pc_tensor = torch.flip(pc_tensor, dims=(0,))
         return (rr, cc), pc_tensor
 
     def select_move(self, board, viewer, side_to_move, no_battle_ratio: float, temperature: float = 1.0):
@@ -264,11 +266,13 @@ class SharedPolicy:
         ps = ps_tensor.cpu().detach().numpy()
         if ps.sum() <= 0:
             idx = int(mask_sel_rot.flatten().argmax().item())
+            # print('policy269:move',idx)
         else:
             idx = int(np.random.choice(HW, p=ps))
         rr_sel, cc_sel = divmod(idx, BOARD_W)
         if viewer == getattr(Player,'BLUE',1):
             rr_sel, cc_sel = BOARD_H-1-rr_sel, BOARD_W-1-cc_sel
+            ps_tensor = torch.flip(ps_tensor, dims=(0,))
         src = (rr_sel, cc_sel)
 
         # target head extra channel 0 = selected piece one-hot (canonical orientation)
@@ -301,6 +305,7 @@ class SharedPolicy:
         rr_t, cc_t = divmod(j, BOARD_W)
         if viewer == getattr(Player,'BLUE',1):
             rr_t, cc_t = BOARD_H-1-rr_t, BOARD_W-1-cc_t
+            pt_tensor = torch.flip(pt_tensor, dims=(0,))
         dst = (rr_t, cc_t)
         # 起点坐标，终点坐标，起点概率(形状拉平），终点拉平的概率
         return src, dst, ps_tensor, pt_tensor
