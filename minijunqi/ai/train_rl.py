@@ -75,23 +75,34 @@ def play_episode(net:PolicyNet):
         traj.append((logp, player,result))
         # print(ascii_board(g.state.board, viewer=Player.RED, reveal_all=True))
     if g.state.winner is not None:
-        r=10.0 if g.state.winner==Player.RED else -5.0
+        # r=10.0 if g.state.winner==Player.RED else -10.0
+        pass
     elif g.state.end_reason=='draw':
-        r=0
+        # r=0
+        pass
     else:
         print(f"end_reason:{g.end_reason}")
         raise ValueError("出现了未知的结束原因")
     returns=[]
     for index,(logp,player,result) in enumerate(traj):
-        gain=r if player==Player.RED else -r
+        gain = 0
+        if player == g.state.winner:
+            gain+=10
+        else:
+            oppo = Player.RED if player == Player.BLUE else Player.BLUE
+            if g.state.winner == oppo:
+                gain-=10
         if g.state.end_reason=='draw':
-            gain -= 5
+            # gain -= 1
+            pass
         if result == 'attacker':
-            gain += 20 * index/len(traj)
-            # print('主动吃子 r+=5')
+            pass
+            # gain += 10 * index/len(traj)
+            # print('主动吃子 ')
         elif result == 'defender':
-            gain -= 1
-            # print('送子，r-=1')
+            pass
+            # gain -= 2
+            # print('送子，r-=2')
         returns.append((logp,gain))
     return returns
 
@@ -99,7 +110,7 @@ def train(episodes, out, from_ckpt=None,lr_step=2, lr_gamma=0.9):
     net = PolicyNet()
     if from_ckpt :
         net.load_state_dict(torch.load(from_ckpt)) 
-    opt=optim.Adam(net.parameters(), lr=1e-2)
+    opt=optim.Adam(net.parameters(), lr=1e-3)
     scheduler = optim.lr_scheduler.StepLR(opt, step_size=lr_step, gamma=lr_gamma)
     for _ in trange(episodes):
         traj=play_episode(net)
